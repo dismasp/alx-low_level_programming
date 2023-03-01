@@ -1,39 +1,25 @@
 #include "main.h"
+
 /**
-*cap_string - function that capitalize first character of a word
-*@str: string to capitalize
-*Return:returns the capitalized string
-*/
-/*char *cap_string(char *str)
-{
-int index = 0;
+ * cap_string - capitalizes all words of a string.
+ * @s: pointer to input string.
+ * Return: Returns pointer to capitalized string.
+ */
 
-while (str[++index])
+char *cap_string(char *s)
 {
-while (!(str[index] >= 'a' && str[index] <= 'z'))
-index++;
+int i, j;
+char sep[] = " \t\n,;.!?\"(){}";
 
-if (str[index - 1] == ' ' || str[index - 1] == '\t' || str[index - 1] == '\n' || str[index - 1] == ',' || str[index - 1] == ';' || str[index - 1] == '.' || str[index - 1] == '!' || str[index - 1] == '?' || str[index - 1] == '"' || str[index - 1] == '(' || str[index - 1] == ')' || str[index - 1] == '{' || str[index - 1] == '}')
-str[index] -= 32;
-}
-return (str);
-}
-*/
-char* cap_string(char* str) {
-int len = strlen(str);
-int i;
-// Capitalize the first letter of the string
-str[0] = toupper(str[0]);
-
-// Loop through the string, looking for separators
-for (i = 1; i < len; i++) 
+i = 1;
+if (s[0] >= 'a' && s[0] <= 'z')
+s[0] -= ('a' - 'A');
+while (s[i] != '\0')
 {
-if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == ',' || str[i] == ';' || str[i] == '.' || str[i] == '!' || str[i] == '?' || str[i] == '"' || str[i] == '(' || str[i] == ')' || str[i] == '{' || str[i] == '}') 
-{
-// Capitalize the next character after the separator
-str[i+1] = toupper(str[i+1]);
+for (j = 0; sep[j] != '\0'; j++)
+if (s[i - 1] == sep[j] && (s[i] >= 'a' && s[i] <= 'z'))
+s[i] -= ('a' - 'A');
+i++;
 }
-}
-
-return str;
+return (s);
 }
