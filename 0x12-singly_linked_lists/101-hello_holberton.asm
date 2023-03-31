@@ -1,16 +1,21 @@
-section .data
-hello db &apos;Hello, Holberton&apos;, 0x0a, 0
+extern printf
 
 section .text
-global _start
+global main
 
-_start:
-; call printf with hello string
-mov rdi, hello
-xor rax, rax
+main:
+push rbp
+
+mov rdi, fmt
+mov rsi, msg
+mov rax, 0
 call printf
 
-; exit with status code 0
-xor rdi, rdi
-mov rax, 60
-syscall
+pop rbp
+
+mov rax, 0
+ret
+
+section .data
+msg: db "Hello, Holberton", 0
+fmt: db "%s", 10, 0
