@@ -1,17 +1,22 @@
 /**
  * create_file - creates a file and writes text content to it
+ *
  * @filename: the name of the file to create
  * @text_content: the text to write to the file
  *
  * Return: 1 on success, -1 on failure
  *
  * Description: This function creates a new file with the specified filename
- * and writes the contents ofthe text_content string to it.If the file already
- * exists,itscontentswill betruncated.Thefile willhavepermissions of rw-------
- * and the function will return -1 if the file cannot be created or written to.
+ * and writes the contents of the text_content string to it. If the file
+ * already
+ * exists, its contents will be truncated. The file will have permissions o
+ * f rw-------
+ * and the function will return -1 if the file cannot be created or
+ * written to.
+ *
  * This code was written by Dismas to meet the requirements of a project.
  */
-
+#include <stdlib.h>
 #include "main.h"
 
 /**
