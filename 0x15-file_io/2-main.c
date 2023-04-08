@@ -5,6 +5,8 @@
 /**
  * main - check the code
  *
+ * @ac: Variable
+ * @av: variable name
  * Return: Always 0.
  */
 int main(int ac, char **av)
