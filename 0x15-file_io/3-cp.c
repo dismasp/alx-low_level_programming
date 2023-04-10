@@ -46,7 +46,7 @@ fd_from = open(file_from, O_RDONLY);
 if (fd_from == -1)
 print_error("Error: Can't read from file %s\n", 98, file_from);
 
-fd_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+fd_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0644);
 if (fd_to == -1)
 print_error("Error: Can't write to %s\n", 99, file_to);
 
